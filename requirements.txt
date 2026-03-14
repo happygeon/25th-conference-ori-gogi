@@ -1,0 +1,8 @@
+openai
+pandas
+fastapi
+uvicorn
+jinja2
+python-multipart
+mysql-connector-python
+requests

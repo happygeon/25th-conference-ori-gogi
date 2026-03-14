@@ -10,10 +10,10 @@ templates = Jinja2Templates(directory="static")
 async def form_get(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/number", response_class=HTMLResponse)
+@app.post("/result", response_class=HTMLResponse)
 async def submit_form(request: Request, name: str = Form(...)):
     ratio, answer, g_name = prompt(name)
-    return templates.TemplateResponse("number.html", {"request": request, "ratio": ratio, "answer": answer,"g_name":g_name})
+    return templates.TemplateResponse("result.html", {"request": request, "ratio": ratio, "answer": answer, "g_name": g_name})
 
 if __name__ == "__main__":
     import uvicorn
